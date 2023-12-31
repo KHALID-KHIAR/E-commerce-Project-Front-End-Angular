@@ -1,0 +1,26 @@
+<div class="container">
+    <!-- <div class="link-container"> -->
+        <!-- <a routerLink="login/login" routerLinkActive="active-link" class="link">Login</a>
+        <a routerLink="login/signUp" routerLinkActive="active-link" class="link">Sign-Up</a> -->
+            <div class="hide-layout-container">
+                <div class="content-inside-hideLayout">
+                    <div class="signup-overlay">
+                        <h1 class="center-txt">Hello New Friend</h1>
+                        <h3 class="center-txt">You can create new account Here </h3>
+                        <button  class="btn" (click)="signup_Animation_toLeft()">Sign-Up</button>
+                    </div>
+                    <div class="login-overlay">
+                        <h1 class="center-txt">Welcome Back Friend </h1>
+                        <h3 class="center-txt">Log in to your account Here </h3>
+                        <button class="btn" (click)="login_Animation_toRight()">Login</button>
+                    </div>
+                </div>
+            </div>
+        <app-login class="app-login"></app-login>
+        <app-signup class="app-signup"></app-signup>
+
+
+    <!-- </div> -->
+    <!-- <router-outlet></router-outlet> -->
+
+</div>

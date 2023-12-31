@@ -1,0 +1,21 @@
+h1{
+color: white;
+}
+a{
+    background-color: grey;
+    color: white;
+    padding: 15px;
+    size: 20px;
+    border-radius: 20px;
+    margin: 5px 10px 0 0;
+    width: 5%;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+}
+a:hover{
+    background-color: white;
+    color: black;
+    scale: 1.09;
+    transition: .9s;
+}

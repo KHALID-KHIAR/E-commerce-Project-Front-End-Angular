@@ -1,0 +1,78 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <h2>Sign-Up Form </h2>
+
+    <label>Firstname</label>
+    <input type="text" name="firstname" formControlName="firstname" required
+        [class]="(form.controls['firstname'].invalid && form.controls['firstname'].touched) ? 'red-border' : ''"
+    />
+    <span class="error" 
+    *ngIf=" isTouched('firstname') && checkError('firstname','required')"
+    >Firstname is required !  </span>
+
+    <span class="error"
+    *ngIf="isTouched('firstname') && checkError('firstname','minlength')"
+    >Firstname should be greater or equal to 3 characters !</span>
+
+    <label>lastname</label>
+    <input type="text" name="lastname" formControlName="lastname" required
+    [class]="(form.controls['lastname'].invalid && form.controls['lastname'].touched) ? 'red-border' : ''"
+     />
+    <span class="error" 
+    *ngIf=" isTouched('lastname') && checkError('lastname','required')"
+    >Lastname is required !  </span>
+
+    <span class="error"
+    *ngIf="isTouched('lastname') && checkError('lastname','minlength')"
+    >Lastname should be greater or equal to 3 characters !</span>
+
+    <label>E-mail</label>
+    <input type="email" name="email" formControlName="email" required
+    [class]="(form.controls['email'].invalid && form.controls['email'].touched) ? 'red-border' : ''"
+    />
+    <span class="error" 
+    *ngIf=" isTouched('email') && checkError('email','required')"
+    >E-mail is required !  </span>
+
+    <span class="error"
+    *ngIf="isTouched('email') && checkError('email','email')"
+    >Provide a valid Email !</span>
+
+
+    <label>Password</label>
+    <div class="password-container">
+    <input [type]="isPassword ?'password' : 'text' " name="password" formControlName="password" required
+    [class]="(form.controls['password'].invalid && form.controls['password'].touched) ? 'red-border' : ''"
+     />
+    <span id="showP" (click)="togglePassword()" [innerHTML]="isPassword ? svgToHtml(eyeCloseSvg) : svgToHtml(eyeOpenSvg)"></span>    
+    </div>
+    <span class="error" 
+    *ngIf=" isTouched('password') && checkError('password','required')"
+    >Password is required !  </span>
+
+    <span class="error"
+    *ngIf="isTouched('password') && checkError('password','minlength')"
+    >Password should be greater or equal to 8 characters !</span>
+
+    <label>Confirme Password</label>
+    <div class="password-container">
+    <input [type]="isPassword ?'password' : 'text' " name="confirmePassword" formControlName="confirmePassword" required 
+    [class]="(form.controls['confirmePassword'].invalid && form.controls['confirmePassword'].touched)||
+    form.hasError('ConfPassword') ? 'red-border' : ''"
+    />
+    <span id="showP" (click)="togglePassword()" [innerHTML]="isPassword ? svgToHtml(eyeCloseSvg) : svgToHtml(eyeOpenSvg)"></span>    
+    </div>
+    <span class="error" 
+    *ngIf=" isTouched('confirmePassword') && checkError('confirmePassword','required')"
+    >Confirme Password is required !  </span>
+
+    <span class="error"
+    *ngIf="isTouched('confirmePassword') && checkError('confirmePassword','minlength')"
+    >Confirme Password should be greater or equal to 8 characters !</span>
+    
+    <span class="error"
+    *ngIf="isTouched('confirmePassword') && form.hasError('ConfPassword') && !checkError('confirmePassword','minlength') && !checkError('confirmePassword','required')"
+    >Confirme Password and Password should be the same !</span>
+
+    <button type="submit" [disabled]="!form.status">Login</button>
+
+</form>
