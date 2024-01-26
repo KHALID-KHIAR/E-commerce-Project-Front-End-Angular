@@ -1,0 +1,15 @@
+<main class="product-container">    
+    <div class="image-container">
+        <img [src]="image" alt="film Image">
+    </div>
+    <div class="text-container">
+        <h2 class="title">{{title}} </h2>
+            <p class="price">{{price}}</p>
+            <p class="description">{{description}} </p>
+    </div>
+    <a routerLink="/products/product/{{id}}" class="link-container">
+        View Details >>
+    </a>
+</main>
+
+

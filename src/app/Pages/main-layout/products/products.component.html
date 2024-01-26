@@ -1,0 +1,8 @@
+<div class="products-container">
+
+    <app-product *ngFor="let product of products"
+    [image]="product.image" [title]="product.title" [id]="product.id"
+    [description]="product.description"[price]="product.price"
+    ></app-product>
+
+</div>

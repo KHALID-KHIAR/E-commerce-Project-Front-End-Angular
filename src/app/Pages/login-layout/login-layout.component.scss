@@ -1,6 +1,6 @@
 .container {
     width: 60%;
-    height: 70%;
+    // height: 70%; // because of ant-design
     margin: 50px auto;
     border-radius: 20px;
     background-color: whitesmoke;
@@ -32,6 +32,9 @@
             justify-content: center;
             position: relative;
             color: white;
+            h1, h3{
+                color: white;
+            }
             .login-overlay , .signup-overlay{
                 position: absolute;
                 display: flex;

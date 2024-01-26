@@ -13,7 +13,7 @@ export class LoginLayoutComponent implements OnInit {
   constructor(private route:Router){}
   ngOnInit(): void {
     let currentRoute:string="";
-    currentRoute = this.route.url ;
+    currentRoute = this.route.url ;    
     let overlayLayout= document.querySelector<HTMLElement>(".hide-layout-container");
     let loginOverlay= document.querySelector<HTMLElement>(".login-overlay");
     let signupOverlay= document.querySelector<HTMLElement>(".signup-overlay");

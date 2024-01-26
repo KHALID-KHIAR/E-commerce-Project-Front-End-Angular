@@ -1,0 +1,31 @@
+<nav class="nav-bar">
+
+    <div class="logo-section">
+        <h3>ZORGON</h3>
+    </div>
+    <div class="container">
+        <div class="links-section">
+            <ul>
+                <div class="indicator"></div>
+                <li><a routerLink="/home" id="home" routerLinkActive="active-link" (click)="translateIndic(HomeElment)" #HomeElment>Home</a></li>
+                <li><a routerLink="/route2" id="route2"  routerLinkActive="active-link" (click)="translateIndic(photoElment)" #photoElment>Photos</a></li>
+                <li><a routerLink="/products" id="route3" routerLinkActive="active-link" (click)="translateIndic(productElment)" #productElment>Products</a></li>
+                <li><a routerLink="/route4" id="route4" routerLinkActive="active-link" (click)="translateIndic(Product2Elment)" #Product2Elment>Products2</a></li>
+                <li><a routerLink="/route5" id="route5" routerLinkActive="active-link" (click)="translateIndic(carearElement)" #carearElement>Carear</a></li>
+                <li><a routerLink="/about" id="about" routerLinkActive="active-link" (click)="translateIndic(aboutElement)" #aboutElement>About</a></li>
+            </ul>
+        </div>
+        <div class="login-section">
+            <ul>
+                <li><a routerLink="/login" routerLinkActive="active-link">Login</a></li>
+                <li><a routerLink="/signup" routerLinkActive="active-link">Sign-Up</a></li>
+            </ul>
+        </div>
+    </div>
+        <div class="menu-section" (click)="showMenu()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+</nav>

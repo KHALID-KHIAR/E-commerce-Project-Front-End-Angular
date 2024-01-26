@@ -1,0 +1,32 @@
+    <div class="container">
+        <div class="box-container">
+            <h1 class="title"><span>ZORGON</span> Shop</h1>
+
+            <p class="paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt optio consequuntur
+                 impedit cupiditate quod ex excepturi consequatur officia aliquid accusantium.
+            </p>
+            <div class="btn-container">
+                <button class="btn-home btn-home-login"routerLink="/login">Login</button>
+                <button class="btn-home btn-home-signup"routerLink="/signup">Create Account</button>
+            </div>
+        </div>
+        <div class="carousel-container">
+            <nz-carousel nzAutoPlay [nzEnableSwipe]="true">
+                <div nz-carousel-content *ngFor="let item of items">
+                    <img src="../../../../assets/images/{{item}}" alt="image: {{item}}"/>
+                </div>
+            </nz-carousel>
+        </div>
+
+    </div>
+    <h1 style="text-align: center;">List of Products </h1>
+    <div class="products-container">
+
+        <app-product *ngFor="let product of products"
+        [image]="product.image" [title]="product.title" [id]="product.id"
+        [description]="product.description"[price]="product.price"
+        ></app-product>
+    
+    </div>
+    <h1 style="text-align: center;">About Section</h1>
+    <app-about></app-about>
