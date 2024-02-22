@@ -24,6 +24,8 @@ import { ProductComponent } from './Components/product/product.component';
 import { ProductsComponent } from './Pages/main-layout/products/products.component';
 import { AboutComponent } from './Pages/main-layout/about/about.component';
 import { ProductPageComponent } from './Pages/main-layout/products/product-page/product-page.component';
+import { PayementPageComponent } from './Pages/main-layout/payement-page/payement-page.component';
+import { AdminPageComponent } from './Pages/main-layout/admin-page/admin-page.component';
 
 registerLocaleData(en);
 
@@ -42,6 +44,8 @@ registerLocaleData(en);
     ProductsComponent,
     AboutComponent,
     ProductPageComponent,
+    PayementPageComponent,
+    AdminPageComponent,
   ],
   imports: [
     BrowserModule,

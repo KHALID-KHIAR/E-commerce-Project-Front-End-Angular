@@ -1,0 +1,32 @@
+.admin-main-container{
+    margin:0 auto ;
+    display: flex;
+    justify-content: space-between;
+    transition: 1s;
+}
+.menu-container{
+}
+.admin-container {
+    margin: auto;
+    margin-top: 20px;
+    margin-left: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.sub-container {
+    background-color: white;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 9px -1px rgb(219, 219, 219);
+
+}
+
+
+@media (max-width : 800px){
+
+    .admin-container{
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -18,7 +19,7 @@ export class SignupComponent implements OnInit {
   }
 
   form!:FormGroup;
-  constructor(private formBuilder:FormBuilder,private sanitizer:DomSanitizer){
+  constructor(private formBuilder:FormBuilder,private sanitizer:DomSanitizer,private router:Router){
   }
   ngOnInit(){
     this.form = this.formBuilder.group({
@@ -41,6 +42,8 @@ export class SignupComponent implements OnInit {
 
 if(this.form.valid){
   console.log("Form is ",this.form.status);  
+  localStorage.setItem("logged","true");
+  this.router.navigate(["/home"]);
 }
     else
     {

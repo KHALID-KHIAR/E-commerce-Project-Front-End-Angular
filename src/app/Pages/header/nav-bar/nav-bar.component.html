@@ -1,7 +1,9 @@
 <nav class="nav-bar">
 
     <div class="logo-section">
-        <h3>ZORGON</h3>
+        <a routerLink="/home">
+            <h3>ZORGON</h3>
+        </a>
     </div>
     <div class="container">
         <div class="links-section">
@@ -10,15 +12,27 @@
                 <li><a routerLink="/home" id="home" routerLinkActive="active-link" (click)="translateIndic(HomeElment)" #HomeElment>Home</a></li>
                 <li><a routerLink="/route2" id="route2"  routerLinkActive="active-link" (click)="translateIndic(photoElment)" #photoElment>Photos</a></li>
                 <li><a routerLink="/products" id="route3" routerLinkActive="active-link" (click)="translateIndic(productElment)" #productElment>Products</a></li>
-                <li><a routerLink="/route4" id="route4" routerLinkActive="active-link" (click)="translateIndic(Product2Elment)" #Product2Elment>Products2</a></li>
-                <li><a routerLink="/route5" id="route5" routerLinkActive="active-link" (click)="translateIndic(carearElement)" #carearElement>Carear</a></li>
                 <li><a routerLink="/about" id="about" routerLinkActive="active-link" (click)="translateIndic(aboutElement)" #aboutElement>About</a></li>
             </ul>
         </div>
         <div class="login-section">
             <ul>
-                <li><a routerLink="/login" routerLinkActive="active-link">Login</a></li>
-                <li><a routerLink="/signup" routerLinkActive="active-link">Sign-Up</a></li>
+                <li *ngIf="showUserIcon"><a routerLink="/admin" routerLinkActive="active-link">
+                    <span>Admin</span>
+                    <svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#fff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-420.000000, -2159.000000)" fill="#fff"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M374,2009 C371.794,2009 370,2007.206 370,2005 C370,2002.794 371.794,2001 374,2001 C376.206,2001 378,2002.794 378,2005 C378,2007.206 376.206,2009 374,2009 M377.758,2009.673 C379.124,2008.574 380,2006.89 380,2005 C380,2001.686 377.314,1999 374,1999 C370.686,1999 368,2001.686 368,2005 C368,2006.89 368.876,2008.574 370.242,2009.673 C366.583,2011.048 364,2014.445 364,2019 L366,2019 C366,2014 369.589,2011 374,2011 C378.411,2011 382,2014 382,2019 L384,2019 C384,2014.445 381.417,2011.048 377.758,2009.673" id="profile-[#1335]"> </path> </g> </g> </g> </g></svg>
+                </a></li>
+                <li *ngIf="showUserIcon"><a (click)="logOut()" routerLink="/logout"  routerLinkActive="active-link">
+                    <span> LogOut </span>
+                    <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10 12H20M20 12L17 9M20 12L17 15" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M4 12C4 7.58172 7.58172 4 12 4M12 20C9.47362 20 7.22075 18.8289 5.75463 17" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
+                </a></li>
+                <li *ngIf="!showUserIcon"><a routerLink="/login" routerLinkActive="active-link">
+                    <span> Login </span>
+                    <svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#fff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-420.000000, -2159.000000)" fill="#fff"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M374,2009 C371.794,2009 370,2007.206 370,2005 C370,2002.794 371.794,2001 374,2001 C376.206,2001 378,2002.794 378,2005 C378,2007.206 376.206,2009 374,2009 M377.758,2009.673 C379.124,2008.574 380,2006.89 380,2005 C380,2001.686 377.314,1999 374,1999 C370.686,1999 368,2001.686 368,2005 C368,2006.89 368.876,2008.574 370.242,2009.673 C366.583,2011.048 364,2014.445 364,2019 L366,2019 C366,2014 369.589,2011 374,2011 C378.411,2011 382,2014 382,2019 L384,2019 C384,2014.445 381.417,2011.048 377.758,2009.673" id="profile-[#1335]"> </path> </g> </g> </g> </g></svg>
+                </a></li>
+                <li *ngIf="!showUserIcon"><a routerLink="/signup" routerLinkActive="active-link">
+                    <span> Sign-Up </span>
+                    <svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#fff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-420.000000, -2159.000000)" fill="#fff"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M374,2009 C371.794,2009 370,2007.206 370,2005 C370,2002.794 371.794,2001 374,2001 C376.206,2001 378,2002.794 378,2005 C378,2007.206 376.206,2009 374,2009 M377.758,2009.673 C379.124,2008.574 380,2006.89 380,2005 C380,2001.686 377.314,1999 374,1999 C370.686,1999 368,2001.686 368,2005 C368,2006.89 368.876,2008.574 370.242,2009.673 C366.583,2011.048 364,2014.445 364,2019 L366,2019 C366,2014 369.589,2011 374,2011 C378.411,2011 382,2014 382,2019 L384,2019 C384,2014.445 381.417,2011.048 377.758,2009.673" id="profile-[#1335]"> </path> </g> </g> </g> </g></svg>
+                </a></li>
             </ul>
         </div>
     </div>

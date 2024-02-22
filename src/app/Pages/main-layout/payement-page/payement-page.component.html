@@ -1,0 +1,28 @@
+<main class="payement-page-container">
+
+    <div class="details-container">
+        <h1>Shopping Cart</h1>
+        <div class="pay-product-container">
+            <h1> {{product_details.title}} </h1>
+            <img [src]="product_details.image" alt="product image">
+            <div class="recap-pay">
+                <span class="recap-label">Color : <strong>{{product_details.color }}</strong> </span>
+                <span class="recap-label">Size : <strong>{{product_details.size }}</strong> </span>
+                <span class="recap-label">Quantity : <strong>{{product_details.quantity }}</strong> </span>        
+                <span class="recap-label">Price : <strong>{{ product_details.price+ "$"}} </strong> </span>        
+            </div>
+        </div>
+    </div>
+
+    <div class="summary-container">
+        <h1>Summary</h1>
+        <h3><span>Subtotal</span><strong> {{product_details.price_totale|number:"1.2-2"}} $</strong></h3>
+        <h3><span>Shipping fee</span><strong>{{5|number:"1.2-2"}} $</strong></h3>
+        <h3><strong>Total</strong><strong>{{last_price|number:"1.2-2" }} $</strong></h3>
+        <button class="buy-btn">Buy now</button>
+    </div>
+    <div class="more-info-container">
+        <h3>Buyer protection</h3>
+        <p>Get full refund if the item is not as described or if is not delivered</p>
+    </div>
+</main>

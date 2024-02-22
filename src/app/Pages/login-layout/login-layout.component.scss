@@ -23,6 +23,7 @@
         background: linear-gradient(to right, #FF4B2B, #FF416C);
         position: absolute;
         z-index: 5;
+        translate: 52%;
         .content-inside-hideLayout{
             display: flex;
             flex-direction: column;
@@ -42,6 +43,7 @@
                 align-items: center;
                 justify-content: center;
             }
+            .login-overlay{opacity: 0;}
 
             .center-txt{text-align: center;}
             .btn{

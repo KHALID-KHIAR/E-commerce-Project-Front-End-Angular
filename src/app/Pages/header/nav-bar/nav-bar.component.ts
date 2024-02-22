@@ -9,6 +9,8 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 export class NavBarComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute) { }   
   
+  userStatus:any;
+  showUserIcon:any;
   indicatorInitialValue:any 
   
   ngOnInit(): void {
@@ -20,6 +22,8 @@ export class NavBarComponent implements OnInit {
       this.indicatorInitialValue =  document.getElementById("home")?.getBoundingClientRect().left ;
       this.indicatorInitialValue = Math.floor(this.indicatorInitialValue);
     })
+
+    this.checkUserLogged()
   }
   initialiseIndicator_Route(){
     this.router.events.subscribe((event) => {
@@ -33,7 +37,11 @@ export class NavBarComponent implements OnInit {
     });
   }
 
-
+  logOut(){
+    localStorage.removeItem("logged")
+    window.location.href="/home" ;
+    // this.router.navigateByUrl("/logout");
+  }
   translateIndic(Element:HTMLAnchorElement){
     this.initialiseIndicator_Route()
 
@@ -48,7 +56,16 @@ export class NavBarComponent implements OnInit {
   }
   
 
-
+  checkUserLogged(){
+    this.userStatus = localStorage.getItem("logged")
+    if(this.userStatus==="true"){
+      this.showUserIcon=true;
+      console.log("user is Logged  !");
+      
+    }
+    else {this.showUserIcon=false ;
+    console.log("user is Not Logged  !");}
+  }
 
 
 

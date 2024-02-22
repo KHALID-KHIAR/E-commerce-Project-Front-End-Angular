@@ -1,6 +1,7 @@
 *{
     --txt-color:white;
-    --nav-background-color:linear-gradient(to left, rgb(224 115 247 / 85%), rgb(12 178 230 / 85%));
+    --nav-background-color:linear-gradient(to left, rgb(224 115 247 / 90%), rgb(12 178 230 / 90%));
+    // --nav-background-color:linear-gradient(to right,#FF512F  , #DD2476 );
 }
 :root{
     --translate-indictor-value:0;
@@ -28,7 +29,7 @@
         color: white;
     }
 }
-.links-section{
+.links-section, .login-section{
      ul{
         width: 100%;
         display: flex;
@@ -44,45 +45,51 @@
                 font-weight: 500;
                 letter-spacing: 1.8px;
                 color: var(--txt-color);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
             }
         }
         li:hover{
             scale: 1.019;
             transition: .5s;
             // background-color: rgba(255, 255, 255, 0.651);
-                a{
+                a, svg{
                     color: black;
                 }
         }
     }
 }
 
-.login-section{
-     ul{
-        display: flex;
-        justify-content:flex-end;
-        margin: auto;
-        li{
-            list-style: none;
-            padding: 1.1em;
-            border-radius: 15px;
-            a{
-                text-decoration: none;
-                font-size: 1.2em;
-                font-weight: 500;
-                color: var(--txt-color);
-            }
-        }
-        li:hover{
-            scale: 1.019;
-            transition: .5s;
-            // background-color: rgba(255, 255, 255, 0.651);
-            a{
-                color: black;
-            }
-        }
-    }
-}
+// .login-section{
+//      ul{
+//         width: 100%;
+//         display: flex;
+//         justify-content: space-between;
+//         margin: auto;
+//         li{
+//             list-style: none;
+//             a{
+//                 border-radius: 15px;
+//                 padding: 15px;
+//                 text-decoration: none;
+//                 font-size: 1.2em;
+//                 font-weight: 500;
+//                 letter-spacing: 1.8px;
+//                 color: var(--txt-color);
+//             }
+//         }
+//         li:hover{
+//             scale: 1.019;
+//             transition: .5s;
+//             // background-color: rgba(255, 255, 255, 0.651);
+//             a{
+//                 color: black;
+//             }
+//         }
+//     }
+// }
 .menu-section{
     display: none;
     position: absolute;
@@ -211,14 +218,17 @@
     position: absolute;
     top:76px;
     right: 0;
-    width: 50%;
+    width: 100%;
     z-index: 9;
     border-radius: 0 0 20px 20px;
     .links-section ul, .login-section ul{
         flex-direction: column;
     }
     .login-section{
-        width: 50%;
+        flex-direction: column;
+    }
+    .login-section ul li {
+        padding: 15px;
     }
     .links-section ul li {
         padding: 15px;
