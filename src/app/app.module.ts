@@ -38,7 +38,7 @@ registerLocaleData(en);
     NavBarComponent,
     FooterComponent,
     MainLayoutComponent,
-    HomeComponent,
+    HomeComponent, 
     ProductComponent,
     ProductsComponent,
     AboutComponent,
