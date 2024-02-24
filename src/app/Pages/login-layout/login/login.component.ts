@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
+import { NzMessageService } from 'ng-zorro-antd/message';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   form!:FormGroup;
-  constructor(private formBuilder:FormBuilder,private sanitizer:DomSanitizer,private router:Router){
+  constructor(private formBuilder:FormBuilder,private sanitizer:DomSanitizer,private router:Router,private message:NzMessageService){
   }
   ngOnInit(){
     this.form = this.formBuilder.group({
@@ -31,13 +32,16 @@ export class LoginComponent implements OnInit {
 
 if(this.form.valid){
   console.log("Form is ",this.form.status);  
-  localStorage.setItem("logged","true")
-  // window.open("/admin","_blank")
-  window.location.href="/admin"
+  localStorage.setItem("logged","true");
+  this.message.success("Redirecting ...");
+  setTimeout(()=>{
+    window.location.href=window.location.hostname+"/#/admin" ;
+  },1500);
 }
     else
     {
       console.log("Form is ",this.form.status);
+      this.message.error("Invalid Email or password ! ");
     }
     
   }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
+import { NzMessageService } from 'ng-zorro-antd/message';
 
 @Component({
   selector: 'app-signup',
@@ -19,7 +20,7 @@ export class SignupComponent implements OnInit {
   }
 
   form!:FormGroup;
-  constructor(private formBuilder:FormBuilder,private sanitizer:DomSanitizer,private router:Router){
+  constructor(private formBuilder:FormBuilder,private sanitizer:DomSanitizer,private router:Router,private message:NzMessageService){
   }
   ngOnInit(){
     this.form = this.formBuilder.group({
@@ -43,7 +44,10 @@ export class SignupComponent implements OnInit {
 if(this.form.valid){
   console.log("Form is ",this.form.status);  
   localStorage.setItem("logged","true");
-  this.router.navigate(["/home"]);
+  this.message.success("Redirecting ...");
+  setTimeout(()=>{
+    window.location.href=window.location.hostname+"/#/home" ;
+  },1500);
 }
     else
     {
