@@ -33,9 +33,10 @@ export class LoginComponent implements OnInit {
 if(this.form.valid){
   console.log("Form is ",this.form.status);  
   localStorage.setItem("logged","true");
+  
   this.message.success("Redirecting ...");
   setTimeout(()=>{
-    window.location.href=window.location.hostname+"/#/admin" ;
+    window.location.href="/#/admin" ;
   },1500);
 }
     else

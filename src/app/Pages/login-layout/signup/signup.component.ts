@@ -46,7 +46,7 @@ if(this.form.valid){
   localStorage.setItem("logged","true");
   this.message.success("Redirecting ...");
   setTimeout(()=>{
-    window.location.href=window.location.hostname+"/#/home" ;
+    window.location.href="/#/home" ;
   },1500);
 }
     else
