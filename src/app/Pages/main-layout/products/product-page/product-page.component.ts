@@ -43,9 +43,11 @@ export class ProductPageComponent implements OnInit{
   }
   buyButton(){
     this.message.loading("Redircting to Payment Page ...");
-    this.route.navigate(["products/product/"+this.id+"/payement-gateway",{"quantity":
-    this.getValue("quantity"),"color":this.getValue("color"),"size":this.getValue("size"),"title":this.title
-    ,"image":this.image,"price":this.price, "price_totale":this.priceTotal}])
+    setTimeout(()=>{
+      this.route.navigate(["products/product/"+this.id+"/payement-gateway",{"quantity":
+      this.getValue("quantity"),"color":this.getValue("color"),"size":this.getValue("size"),"title":this.title
+      ,"image":this.image,"price":this.price, "price_totale":this.priceTotal}])
+    },1500)
     
   } 
 }

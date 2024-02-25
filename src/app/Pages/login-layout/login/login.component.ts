@@ -36,7 +36,7 @@ if(this.form.valid){
   
   this.message.success("Redirecting ...");
   setTimeout(()=>{
-    window.location.href="/#/admin" ;
+    window.location.href="https://kh-khalid.site/#/admin" ;
   },1500);
 }
     else

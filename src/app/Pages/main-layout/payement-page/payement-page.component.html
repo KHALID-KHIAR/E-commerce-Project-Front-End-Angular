@@ -19,7 +19,7 @@
         <h3><span>Subtotal</span><strong> {{product_details.price_totale|number:"1.2-2"}} $</strong></h3>
         <h3><span>Shipping fee</span><strong>{{5|number:"1.2-2"}} $</strong></h3>
         <h3><strong>Total</strong><strong>{{last_price|number:"1.2-2" }} $</strong></h3>
-        <button class="buy-btn">Buy now</button>
+        <button class="buy-btn" (click)="hadleBuyProduct()">Buy now</button>
     </div>
     <div class="more-info-container">
         <h3>Buyer protection</h3>

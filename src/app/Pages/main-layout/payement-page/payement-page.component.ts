@@ -30,5 +30,12 @@ export class PayementPageComponent implements OnInit{
     this.last_price = parseFloat(this.product_details.price_totale)+ 5.00 ;
   }
 
+  hadleBuyProduct(){
+    this.message.success("Thank You for Shopping from our store ");
+    setTimeout(()=>{
+      window.location.href="https://kh-khalid.site/#/home"
+    },2000)
+  }
+
 }
 

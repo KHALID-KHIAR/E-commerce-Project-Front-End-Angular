@@ -46,7 +46,7 @@ if(this.form.valid){
   localStorage.setItem("logged","true");
   this.message.success("Redirecting ...");
   setTimeout(()=>{
-    window.location.href="/#/home" ;
+    window.location.href="https://kh-khalid.site/#/home" ;
   },1500);
 }
     else

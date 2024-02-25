@@ -91,3 +91,14 @@
     box-shadow: 3px 3px 9px -1px rgb(219, 219, 219);
 
 }
+
+@media (max-width: 800px){
+    .payement-page-container{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        'details'
+        'summary'
+        'moreinfo'
+        ;
+    }
+}
