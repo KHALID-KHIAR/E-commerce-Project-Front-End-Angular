@@ -95,9 +95,9 @@
 // }
 .menu-section{
     display: none;
-    position: absolute;
+    position: relative;
     right: 10px;
-    top:20px;
+    z-index:999 ;
     cursor: pointer;
     // outline: solid;
     .bar{
